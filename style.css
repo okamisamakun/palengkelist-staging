@@ -1,0 +1,31 @@
+.addItem-form-field {
+    margin-bottom: 12px;
+}
+
+.addItem-form-field:not(:nth-child(4)) {
+    border-right: 1px solid #f3f3f3;
+}
+
+.content-wrapper {
+    margin-top: 34px;
+}
+
+.content-wrapper button {
+    width: 100%;
+}
+
+.remove-item-cta {
+    pointer-events: auto;
+}
+
+@media (max-width: 767px) {
+    .content-wrapper button:first-child {
+        margin-bottom: 12px;
+    }
+
+    .addItem-form-field:not(:nth-child(4)) {
+        border-right: unset;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #f3f3f3;
+    }
+}

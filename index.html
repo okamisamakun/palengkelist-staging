@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid"><span class="navbar-brand text-white"><strong>Grocery List</strong></span></div>
+    </nav>
+    <div class="container content-wrapper">
+        <div id="text-for-alert"></div>
+        <form id="grocery-form">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-6 col-sm-12 addItem-form-field">
+                    <div class="row align-items-center">
+                        <div class="col-lg-auto col-md-4 col-sm-3"><label for="budget" class="form-label">Budget:</label></div>
+                        <div class="col"><input type="number" id="budget" step="0.01" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 addItem-form-field">
+                    <div class="row align-items-center">
+                        <div class="col-lg-auto col-md-4 col-sm-3"><label for="item-name" class="form-label">Item
+                                Name:</label></div>
+                        <div class="col"><input type="text" id="item-name" class="form-control" required></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 addItem-form-field">
+                    <div class="row align-items-center">
+                        <div class="col-lg-auto col-md-4 col-sm-3"><label for="item-quantity" class="form-label">Quantity:</label></div>
+                        <div class="col"><input type="number" id="item-quantity" class="form-control" required></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 addItem-form-field">
+                    <div class="row align-items-center">
+                        <div class="col-lg-auto col-md-4 col-sm-3"><label for="item-price" class="form-label">Price:</label></div>
+                        <div class="col"><input type="number" id="item-price" step="0.01" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6"><button type="submit" class="btn btn-outline-secondary" id="addItemCTA" name="addItemCTA"><i class="bi bi-plus-circle float-start"></i><span class="text-uppercase">Add
+                            Item</span></button></div>
+                <div class="col-lg-3 col-md-6"><button type="button" class="btn btn-outline-danger" id="clearCTA"><i class="bi bi-x-circle float-start"></i>Reset
+                        List</button></div>
+            </div>
+        </form>
+        <div class="list-container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="grocery-list"></tbody>
+            </table>
+            <ul id="grocery-list"></ul>
+            <div id="total-price"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
