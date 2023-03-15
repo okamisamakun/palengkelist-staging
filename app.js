@@ -7,25 +7,22 @@ const addCTA = document.querySelector('#addItemCTA');
 const total = document.querySelector("#total-price");
 const itemName = document.querySelector("#item-name");
 const itemQuantity = document.querySelector("#item-quantity");
-var itemPrice = document.querySelector("#item-price");
-var budget = document.querySelector("#budget");
+const itemPrice = document.querySelector("#item-price");
+const budget = document.querySelector("#budget");
 const list = document.querySelector("#grocery-list");
 
 
 function addItem() {
     var itemTotal = itemQuantity.value * itemPrice.value;
     var remainingBudget = budget.value - itemTotal;
-
     groceryList.push({
         name: itemName.value,
         quantity: itemQuantity.value,
         price: itemPrice.value,
         total: itemTotal,
-        budget: budget.value,
         remainingBudget: remainingBudget
     });
     displayList();
-    console.log(groceryList);
 
 }
 
@@ -53,19 +50,13 @@ function displayList() {
     }
 
     total.innerHTML = `<div class="itemTotalPriceRemainingBudget" data-item-total="${totalPrice.toFixed(2)}" data-remaining-budget="${remainingBudget.toFixed(2)}">Remaining budget: Php ${remainingBudget.toFixed(2)} <br> Total: Php ${totalPrice.toFixed(2)}</div>`;
-
-   /* if (remainingBudget <= 0) {
-        addCTA.disabled = true;
-    } else {
-        addCTA.disabled = false;
-    }*/
     
     budgetChecker(remainingBudget);
     groceryListChecker()
     
 
 }
-
+ 
 function budgetChecker(remainingBudget) {
     if (remainingBudget <= 0) {
         addCTA.disabled = true;
@@ -135,7 +126,7 @@ document.addEventListener('click', (e) => {
 
 
 
-/*window.onbeforeunload = (e) => {
+window.onbeforeunload = (e) => {
     e.preventDefault();
     return '';
-};*/
+};
